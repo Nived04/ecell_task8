@@ -1,0 +1,33 @@
+<div id="formModal" class="modal">
+    <div class="modal-content">
+      <style>
+        .Login_Btn{
+          background-color:#cc2900; 
+          border: none;
+          color: white;
+          padding: 15px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 12px;
+        }
+      </style>
+      <center>
+        <h1>Log In</h1>
+        <h3>
+          <form method="post">
+            <input type="text" id="username" name="username"><br><br>
+            <input type="text" id="password1" name="password1"><br><br>
+            <input type="text" id="password2" name="password2"><br><br><br>
+            <button type="submit" class="Login_Btn">Log In</button>
+          </form>
+        </h3>
+        <p>
+          <!-- <img src= "{% static 'KgpLogo.jpg' %}" alt="KGP" width="300" height="300"> -->
+        </p>
+      </center>
+    </div>
+    <span class="closeBtn">&times;</span>
+  </div>
