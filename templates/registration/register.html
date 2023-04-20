@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<style>
+  .Reg_Btn{
+    background-color:#cc2900; 
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+  }    
+  ul{
+    list-style-type: none;
+    color: red;
+  }
+</style>
+<center>
+    <h1>Sign up</h1>
+    <h3>
+        <form method="post">
+        {% csrf_token %}
+        <p>
+            {{form.username.label}}
+            {{form.username}}
+            {{form.errors.username}}
+        </p>
+        <p>
+            {{form.password1.label}}
+            {{form.password1}}
+            {{form.errors.password1}}
+        </p>
+        <p>
+            {{form.password2.label}}
+            {{form.password2}}
+            {{form.errors.password2}}
+        </p>
+        <button type="submit" class="Reg_Btn">Register</button>
+        </form>
+    </h3>
+    <p>
+      <!-- <img src= "{% static 'KgpLogo.jpg' %}" alt="KGP" width="300" height="300"> -->
+    </p>
+</center>
+{% endblock %}

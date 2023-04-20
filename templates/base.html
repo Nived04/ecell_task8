@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Base file{% endblock %}</title>
+    <link rel="stylesheet" href=" {% static 'body_style.css' %} "></link>
+    <style>
+      .Login_Btn{
+              background-color:#cc2900; 
+              border: none;
+              color: white;
+              padding: 15px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              cursor: pointer;
+              border-radius: 12px;
+            }
+      .modalBtn{
+        background-color: #cc2900;  
+        color: white;
+        border: none;
+        padding: 15px 16px; 
+      }
+      .modalBtn:hover{
+        background-color: #111;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="background-wrap">
+      <div class="bubble x1"></div>
+      <div class="bubble x2"></div>
+      <div class="bubble x3"></div>
+      <div class="bubble x4"></div>
+      <div class="bubble x5"></div>
+      <div class="bubble x6"></div>
+      <div class="bubble x7"></div>
+      <div class="bubble x8"></div>
+      <div class="bubble x9"></div>
+      <div class="bubble x10"></div>
+  </div>
+    <main>
+      <div class="navbar">
+        <ul class="main_ul">  
+          {% if user.is_authenticated %}
+            <li class="main_li"><a href="{% url 'protected' %}">PROFILE</a></li>
+            <li class="main_li"><a href="{% url 'logout' %}">LOGOUT</a></li>
+          {% else %}
+            <li class="main_li"><!-- <a href="{% url 'login' %}"> --><button id="modalBtn" class="modalBtn">LOGIN</button></li>
+            <li class="main_li"><a href="{% url 'register' %}">REGISTER</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      <center>
+      <div id="formModal" class="modal">
+        <div class="modal-content">
+          <center> 
+            <h1>Log In</h1>
+            <h3>
+              <form class="modal-content animate" action="/login_user" method="post">
+                <input type="text" id="username" name="username" placeholder="Enter Username"><br><br>
+                <input type="text" id="password1" name="password1" placeholder="Enter Password"><br><br>
+                <input type="text" id="password2" name="password2" placeholder="Reenter Password"><br><br><br>
+                <button type="submit" class="Login_Btn">Log In</button>
+              </form>
+            </h3>
+            <p>
+              <!-- <img src= "{% static 'KgpLogo.jpg' %}" alt="KGP" width="300" height="300"> -->
+            </p>
+          </center>
+        </div>
+        <span class="closeBtn">&times;</span>
+      </div>
+    </center>
+      
+      {% block content_bionav %}
+      {% endblock %}
+      {% block content %}
+      {% endblock %}
+
+    </main>
+    <script src="{% static 'modal.js' %}"></script>
+  </body>
+</html>

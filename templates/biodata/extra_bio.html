@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}Extra Info{% endblock %}
+
+
+{% block content_bionav %}
+<style>
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkblue; 
+    }
+    li{
+        display: inline-block;
+    }
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: #111;
+    }
+    tr{
+        text-align: center;
+        font-size:x-large;
+    }
+    
+</style>
+<div class="nav_bio">
+    <center>
+        <ul>
+            <li><a href="{% url 'biodata' %}">MAIN</a></li>
+            <li><a href="{% url 'education' %}">EDUCATION</a></li>
+            <li><a href="{% url 'places' %}">PLACES STAYED/VISITED</a></li>
+            <li><a href="{% url 'extra' %}">EXTRA</a></li>
+        </ul>
+    </center>
+</div>
+{% endblock %}
+
+{% block content %}
+<center>
+    <p>
+        <table border="1">
+            <tr>
+                <th>Title</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td>Painting, Basketball, Piano</td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td>Strategy, planning, quick learning, enthusiasm</td>
+            </tr>
+            <tr>
+                <td>Entertainment</td>
+                <td>Movies<br>Sitcoms<br>Historical period drama<br>Thriller series </td>
+            </tr>
+        </table>
+    </p>
+</center>
+{% endblock %}

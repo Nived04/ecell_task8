@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Education{% endblock %}
+
+{% block content_bionav %}
+<style>
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkblue; 
+    }
+    li{
+        display: inline-block;
+    }
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: #111;
+    }
+    tr{
+        text-align: center;
+        font-size:x-large;
+    }
+    
+</style>
+<div class="nav_bio">
+    <center>
+        <ul>
+            <li><a href="{% url 'biodata' %}">MAIN</a></li>
+            <li><a href="{% url 'education' %}">EDUCATION</a></li>
+            <li><a href="{% url 'places' %}">PLACES STAYED/VISITED</a></li>
+            <li><a href="{% url 'extra' %}">EXTRA</a></li>
+        </ul>
+    </center>
+</div>
+{% endblock %}
+
+{% block content %}
+<center>
+    <p>
+        <table border="1">
+            <tr>
+                <th>Institute</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>The Bishop's School, Pune<br><br><img src="{% static 'bishops.jpg' %}"></td>
+                <td>Till Class 10</td>
+            </tr>
+            <tr>
+                <td>M.P. Junior College, Pune</td>
+                <td>Classes 11th and 12th</td>
+            </tr>
+            <tr>
+                <td>Bakliwal Tutorials, Pune<br><br><img src="{% static 'BT.jpg' %}"></td>
+                <td>Coaching for JEE</td>
+            </tr>
+            <tr>
+                <td>IIT Kharagpur<br><br><img src="{% static 'KgpLogo.jpg' %}" width="200" height="200"></td>
+                <td>Undergraduate - Btech in CSE</td>
+            </tr>
+        </table>
+    </p>
+</center>
+{% endblock %}

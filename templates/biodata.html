@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Biodata{% endblock %}
+
+
+{% block content_bionav %}
+<style>
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkblue; 
+    }
+    li{
+        display: inline-block;
+    }
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: #111;
+    }
+    tr{
+        text-align: center;
+        font-size:x-large;
+    }
+    
+</style>
+<div class="nav_bio">
+    <center>
+        <ul>
+            <li><a href="{% url 'biodata' %}">MAIN</a></li>
+            <li><a href="{% url 'education' %}">EDUCATION</a></li>
+            <li><a href="{% url 'places' %}">PLACES</a></li>
+            <li><a href="{% url 'extra' %}">EXTRA</a></li>
+        </ul>
+    </center>
+</div>
+{% endblock %}
+{% block content %}
+<center>
+    <h2>This is the creator's Biodata</h2>
+    <p>
+        <img src="{% static 'Biodata.jpg' %}" alt="Biodata" width="500" height="200">
+    </p>
+    <p>
+        <table border="2" >
+            <tr>
+                <th>Field</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Nived Shah</td>
+            </tr>
+            <tr>
+                <td>Father's Name</td>
+                <td>Roshan Shah</td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Height</td>
+                <td>6ft</td>
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td>9*********0</td>
+            </tr>            
+            <tr>
+                <td>Email</td>
+                <td>nived@ecelltask.com</td>
+            </tr>
+        </table>
+    </p>
+</center>
+{% endblock %}

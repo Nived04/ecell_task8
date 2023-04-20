@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}Places Info{% endblock %}
+
+
+{% block content_bionav %}
+<style>
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkblue; 
+    }
+    li{
+        display: inline-block;
+    }
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: #111;
+    }
+    tr{
+        text-align: center;
+        font-size:x-large;
+    }
+    
+</style>
+<div class="nav_bio">
+    <center>
+        <ul>
+            <li><a href="{% url 'biodata' %}">MAIN</a></li>
+            <li><a href="{% url 'education' %}">EDUCATION</a></li>
+            <li><a href="{% url 'places' %}">PLACES STAYED/VISITED</a></li>
+            <li><a href="{% url 'extra' %}">EXTRA</a></li>
+        </ul>
+    </center>
+</div>
+{% endblock %}
+
+{% block content %}
+<center>
+    <p>
+        <table border="1">
+            <tr>
+                <th>Place</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Nadiad, Gujarat</td>
+                <td>Birth Place</td>
+            </tr>
+            <tr>
+                <td>Pune, Maharashtra</td>
+                <td>City of residence</td>
+            </tr>
+            <tr>
+                <td>Kharagpur, West Bengal</td>
+                <td>Undergraduate studies</td>
+            </tr>
+        </table>
+    </p>
+</center>
+{% endblock %}
